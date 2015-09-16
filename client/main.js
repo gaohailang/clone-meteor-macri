@@ -1,3 +1,3 @@
-Template.body.events({
+Template.body.helpers({
 
 });

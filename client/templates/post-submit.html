@@ -1,0 +1,29 @@
+<template name="postSubmit">
+  <form class="main form page">
+    <div class="form-group">
+      <label for="url" class="control-label">
+        URL
+      </label>
+      <div class="controls">
+        <input type="text" name="url" id="url" value="" placeholder="Your URL" class="form-control">
+        <span class="help-block">
+          <!-- {{errorMessage 'url'}} -->
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title" class="control-label">
+        Title
+      </label>
+      <div class="controls">
+        <input type="text" name="title" id="title" value="" placeholder="Name your post" class="form-control">
+        <span class="help-block">
+          <!-- {{errorMessage 'title'}} -->
+        </span>
+      </div>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+</template>

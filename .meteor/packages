@@ -5,6 +5,11 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 accounts-password
+iron:router
+sacha:spin
+grigio:babel
+fourseven:scss
+accounts-ui
+twbs:bootstrap
