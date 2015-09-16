@@ -42,5 +42,27 @@ Meteor.methods({
 
     if(!affected)
       throw new Meteor.Error('invalid', 'You weren\'t able to upvoted that already upvoted post');
+  },
+  commentInsert(commentAttributes) {
+
+    var user = Meteor.user();
+    var post = Posts.findOne(commentAttributes.postId);
+
+    if(!post)
+      throw new Meteor.Error('invalid-comment', 'you must comment on a post');
+
+    comment = _.extend(commentAttributes, {
+      userId: user._id,
+      author: user.username,
+      submitted: new Date()
+    });
+
+    Posts.update(comment.postId, {
+      $inc: {commentsCount: 1}
+    });
+
+    comment._id = Comments.insert(comment);
+
+    return comment._id;
   }
 });
